@@ -19,7 +19,7 @@ For details about creating a **Perforce Password Credential** or **Perforce Tick
 - Select the credentials for the project from the **Perforce credentials** dropdown. 
 
 ### Workspace behavior
-Perforce workspaces are configured on the Jenkins Job configuration page and support the following behaviours: 
+Perforce workspaces are configured on the Jenkins Job configuration page and support the following behaviours:  
 **Note:** Many of the workspace fields can include environment variables to help define their value. We recommend that variables are used in the **Workspace name** to enable you to identify builds. For more information about environment variables, see [Variable Expansion](VARIABLEEXPANSION.md).  
  - **Manual (custom view)**: Manually define the workspace view, and sync options. Creates the workspace if it does not already exist or updates the workspace spec by setting the various options if it already exists. Jenkins will fill out the workspace root and may override the Clobber option. For details about manually configuring your workspace, see [Manual Workspace](WORKSPACEMANUAL.md).  
  - **Static (static view, master only)**: Uses a predefined workspace, the workspace must have a valid view and must already exist. The plugin user must either own the workspace or the spec must be unlocked allowing the plugin user to make edits. The workspace view remains static, but Jenkins will update other fields such as the workspace root, and clobber option. For details about using a static predefined workspace, see [Static Workspace](WORKSPACESTATIC.md).  
@@ -71,9 +71,9 @@ If no triggers are set, Jenkins will build based on the **Polling build filters*
 - **Poll SCM:** Not recommended. Select to trigger a Jenkins job build based on the polling schedule entered in the field below the checkbox. The schedule is constructed using the Cron format, see the bubble help for **Poll SCM**. 
 ![Poll SCM with Example Schedule](images/trigger.png)
 The example above runs a build Monday to Friday every 10 minutes. `H` is a time offset (calculated using a Hash of the Job name).  
-**Caveats:**
+**Caveats:**  
 -- You must use workspaces named using the recommended environment variables, see [Variable Expansion](VARIABLEEXPANSION.md).  
--- Do not use parameterized builds.
+-- Do not use parameterized builds.  
 -- If you enable **Poll SCM**,  ensure that your **Auto build filters** are configured to suit regular builds. 
 
 ### Build
